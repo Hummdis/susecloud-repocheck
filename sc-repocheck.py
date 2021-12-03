@@ -2718,7 +2718,7 @@ def upgrade_packages(framework):
         file_location = os.path.join(
             "/tmp", "late_instance_offline_update_gce_" + os_vers + ".tar.gz")
     elif framework == "ec2":
-        arch = subprocess.check_output(['uname', '-i']).decode("utf-8")
+        arch = subprocess.check_output(['uname', '-i']).decode("utf-8").strip()
         url = "https://52.15.49.139/late_instance_offline_update_ec2_" + \
             arch + "_" + os_vers + ".tar.gz"
         file_location = os.path.join(
